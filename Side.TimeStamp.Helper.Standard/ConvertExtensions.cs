@@ -104,9 +104,9 @@ namespace Side.Timestamp.Helper.Core
         {
             if (values == null) throw new ArgumentNullException(nameof(values));
 
-            var max = values.Min(x => BitConverter.ToInt64(x.Reverse().ToArray(), 0));
+            var min = values.Min(x => BitConverter.ToInt64(x.Reverse().ToArray(), 0));
 
-            return BitConverter.GetBytes(max).Reverse().ToArray();
+            return BitConverter.GetBytes(min).Reverse().ToArray();
         }
     }
 }

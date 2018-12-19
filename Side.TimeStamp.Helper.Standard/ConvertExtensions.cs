@@ -28,7 +28,7 @@ using System.Text.RegularExpressions;
 namespace Side.TimeStamp.Helper.Standard
 {
     /// <summary>
-    /// Provides helper methods for working with byte arrays with emphasis on working with TimeStamp data types from SQL Server.
+    /// Provides extension methods for working with byte arrays with emphasis on working with TimeStamp data types from SQL Server.
     /// This is specifically useful when comparing timestamp column values such as looking for the changes after a particular
     /// timestamp value.
     /// </summary>
@@ -88,6 +88,20 @@ namespace Side.TimeStamp.Helper.Standard
             return includePrefix
                 ? $"0x{BitConverter.ToString(bytes).Replace("-", "")}"
                 : BitConverter.ToString(bytes).Replace("-", "");
+        }
+
+        /// <summary>
+        /// Returns a 64-bit signed integer converted from eight bytes at a specified position in a byte array.
+        /// </summary>
+        /// <param name="bytes">An array of bytes.</param>
+        /// <returns>A 64-bit signed integer formed by eight bytes beginning at 0 index.</returns>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// <paramref name="bytes" /> is <see langword="null" />. </exception>
+        public static long ToInt64(this byte[] bytes)
+        {
+            if (bytes == null) throw new ArgumentNullException(nameof(bytes));
+
+            return BitConverter.ToInt64(bytes, 0);
         }
 
         /// <summary>

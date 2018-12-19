@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Provides extension methods for working with byte arrays with emphasis on working with TimeStamp data types from SQL Server. This is specifically useful when comparing timestamp column values such as looking for the changes after a particular timestamp value.</Description>
+    <Copyright>Copyright © 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/sidesoftware/TimeStamp-Helper/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/sidesoftware/Side.TimeStamp.Helper</PackageProjectUrl>
+    <Authors>Side Software</Authors>
+    <PackageTags>Time Stamp SQL Server byte array</PackageTags>
   </PropertyGroup>
 
 </Project>

@@ -9,19 +9,19 @@ TimeStamp-Helper can be installed in several different ways.
 Install using Package Manager
 
 ```
-PM> Install-Package Side.TimeStamp.Helper.Standard -Version 1.0.0
+PM> Install-Package Side.TimeStamp.Helper.Standard
 ```
 
 Install using .NET CLI
 
 ```
-> dotnet add package Side.TimeStamp.Helper.Standard --version 1.0.0
+> dotnet add package Side.TimeStamp.Helper.Standard
 ```
 
 Install using Paket CLI
 
 ```
-> paket add Side.TimeStamp.Helper.Standard --version 1.0.0
+> paket add Side.TimeStamp.Helper.Standard
 ```
 
 ## Sample

@@ -8,6 +8,8 @@
     <PackageProjectUrl>https://github.com/sidesoftware/Side.TimeStamp.Helper</PackageProjectUrl>
     <Authors>Side Software</Authors>
     <PackageTags>Time Stamp SQL Server byte array</PackageTags>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Add ToInt64 extension</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>

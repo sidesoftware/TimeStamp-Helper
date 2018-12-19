@@ -23,8 +23,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
-namespace Side.Timestamp.Helper.Core
+namespace Side.TimeStamp.Helper.Standard
 {
     /// <summary>
     /// Provides helper methods for working with byte arrays with emphasis on working with TimeStamp data types from SQL Server.
@@ -34,6 +35,11 @@ namespace Side.Timestamp.Helper.Core
     public static class ConvertExtensions
     {
         /// <summary>
+        /// The characters that are allowed in hexadecimal
+        /// </summary>
+        private static readonly Regex HexDigits = new Regex("^[A-Fa-f0-9]+$", RegexOptions.Compiled);
+
+        /// <summary>
         /// Converts a hexadecimal string to a byte array
         /// </summary>
         /// <param name="hex">The string to convert</param>
@@ -42,7 +48,11 @@ namespace Side.Timestamp.Helper.Core
         /// <paramref name="hex" /> is <see langword="null" />. </exception>
         public static byte[] ToByteArray(this string hex)
         {
+            // Validate input
             if (string.IsNullOrEmpty(hex)) throw new ArgumentNullException(nameof(hex));
+            if ((hex.Length & 0x01) == 0x01) throw new ArgumentException("invalid input length", nameof(hex));
+            if (!HexDigits.IsMatch(hex)) throw new ArgumentException("input contains invalid characters", nameof(hex));
+            if (hex.Length == 0) throw new ArgumentException("input should not be empty", nameof(hex));
 
             return Enumerable
                 .Range(0, hex.Length)
@@ -67,14 +77,17 @@ namespace Side.Timestamp.Helper.Core
         /// Converts a byte array to a hexadecimal string
         /// </summary>
         /// <param name="bytes">the byte array to convert</param>
+        /// <param name="includePrefix">Include the 0x prefix or not</param>
         /// <returns> hexadecimal string of values from the byte array</returns>
         /// <exception cref="T:System.ArgumentNullException">
         /// <paramref name="bytes" /> is <see langword="null" />. </exception>
-        public static string ToHexString(this byte[] bytes)
+        public static string ToHexString(this byte[] bytes, bool includePrefix = true)
         {
             if (bytes == null) throw new ArgumentNullException(nameof(bytes));
 
-            return $"0x{BitConverter.ToString(bytes).Replace("-", "")}";
+            return includePrefix
+                ? $"0x{BitConverter.ToString(bytes).Replace("-", "")}"
+                : BitConverter.ToString(bytes).Replace("-", "");
         }
 
         /// <summary>

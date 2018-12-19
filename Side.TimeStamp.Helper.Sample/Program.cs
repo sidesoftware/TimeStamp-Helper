@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Side.Timestamp.Helper.Core;
+using Side.TimeStamp.Helper.Standard;
 
 namespace Side.TimeStamp.Helper.Sample
 {

@@ -22,8 +22,9 @@
 
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Side.TimeStamp.Helper.Standard;
 
-namespace Side.Timestamp.Helper.Core.Tests
+namespace Side.TimeStamp.Helper.Tests
 {
     [TestClass]
     public class ConvertExtensionsFixture

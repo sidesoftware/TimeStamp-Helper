@@ -75,6 +75,12 @@ var maxInt64 = max.ToInt64();
 var minInt64 = min.ToInt64();
 ```
 
+Generally we would want to compare two different variables to see which is one is greater. In this case, you can use the ToInt64 method.
+
+``` csharp
+if(minInt64 > maxInt64) // do sometiing
+```
+
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/sidesoftware/TimeStamp-Helper/tags). 

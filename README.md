@@ -81,7 +81,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Jake Ashcraft** - *Initial work* - [Jake Ashcraft](https://github.com/jakeashcraft)
+* [Jake Ashcraft](https://github.com/jakeashcraft)
 
 See also the list of [contributors](https://github.com/sidesoftware/TimeStamp-Helper/contributors) who participated in this project.
 

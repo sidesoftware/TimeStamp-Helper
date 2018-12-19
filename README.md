@@ -1,6 +1,6 @@
 # TimeStamp-Helper
 
-Provides extension methods for working with byte arrays with emphasis on working with TimeStamp data types from SQL Server. This is specifically useful when comparing timestamp column values such as looking for the changes after a particular timestamp value.
+This project is super basic but is something that I have to do often. Mainly it is a wrapper around the BitConverter object. It provides extension methods for working with byte arrays with emphasis on working with TimeStamp data types from SQL Server. This is specifically useful when comparing timestamp column values such as looking for the changes after a particular timestamp value.
 
 ### Installing
 
